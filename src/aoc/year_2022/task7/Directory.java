@@ -1,4 +1,4 @@
-package aoc.year2022.task7;
+package aoc.year_2022.task7;
 
 import java.util.ArrayList;
 import java.util.List;

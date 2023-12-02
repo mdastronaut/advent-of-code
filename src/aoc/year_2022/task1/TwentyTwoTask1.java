@@ -1,4 +1,4 @@
-package aoc.year2022.task1;
+package aoc.year_2022.task1;
 
 import aoc.util.AdventUtil;
 import org.apache.commons.lang3.StringUtils;

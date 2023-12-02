@@ -1,4 +1,4 @@
-package aoc.year2022.task6;
+package aoc.year_2022.task6;
 
 import aoc.util.AdventUtil;
 

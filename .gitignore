@@ -1,0 +1,6 @@
+.idea/
+advent-of-code.iml
+
+lib/
+out/
+.gitignore

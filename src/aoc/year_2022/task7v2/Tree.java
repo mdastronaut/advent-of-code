@@ -1,4 +1,4 @@
-package aoc.year2022.task7v2;
+package aoc.year_2022.task7v2;
 
 public class Tree {
 
