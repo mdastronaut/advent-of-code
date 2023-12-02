@@ -1,0 +1,31 @@
+stack has on top w/ higher index
+
+ int amountInInt = Integer.parseInt(amount);
+                    while (amountInInt-- > 0) {
+                        list.add(stackFrom.pop().toString());
+                    }
+                    ArrayUtils.reverse(list.toArray());
+                    list.forEach(el -> stackTo.add(el.charAt(0)));
+
+
+
+task7 in progress, probs not best approach but usable
+
+
+/*
+
+ String regx = "\\d\\s*[a-zA-Z]+";
+        Pattern pattern = Pattern.compile(regx);
+Matcher matcher = pattern.matcher(text);
+
+        List<String> matches = new ArrayList<>();
+
+        while(matcher.find()) {
+            matches.add(matcher.group());
+        }
+
+  how to set List<Pull> initial size to 3?
+  how to use indexes in stream
+
+  variable initialization in class vs function vs codeblock in java
+ */
