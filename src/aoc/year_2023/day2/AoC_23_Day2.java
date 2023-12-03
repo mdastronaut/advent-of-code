@@ -1,8 +1,8 @@
 package aoc.year_2023.day2;
 
 import aoc.util.DataProcessor;
-
 import java.util.*;
+
 
 public class AoC_23_Day2 {
 
@@ -36,7 +36,7 @@ public class AoC_23_Day2 {
                         continue outermostLoop;
                     }
                 }
-                sumOfValidGameIds +=gameId;
+                sumOfValidGameIds += gameId;
             } else {
                 long maxRedInCurrPull = 1;
                 long maxGreenCurrPull = 1;
