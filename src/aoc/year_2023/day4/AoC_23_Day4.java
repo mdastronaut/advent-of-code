@@ -59,12 +59,12 @@ public class AoC_23_Day4 {
     public Card createCardFromInputText(String cardInput) {
         String[] strArr = cardInput.split(":|\\|");
         int id = Integer.parseInt(strArr[0].split("\\s+")[1]);
-        List<Integer> winNums = convertToIntArray(strArr[1].split("\\s"));
-        List<Integer> yourNums = convertToIntArray(strArr[2].split("\\s"));
+        List<Integer> winNums = convertToIntList(strArr[1].split("\\s"));
+        List<Integer> yourNums = convertToIntList(strArr[2].split("\\s"));
         return new Card(id, winNums, yourNums);
     }
 
-    public List<Integer> convertToIntArray(String[] strArr) {
+    public List<Integer> convertToIntList(String[] strArr) {
         return Arrays.stream(strArr)
                 .map(String::trim)
                 .filter(s -> !s.isEmpty())
