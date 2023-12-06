@@ -7,12 +7,16 @@ import java.util.List;
 
 public class AoC_23_Day4 {
 
-//    Card 1: 41 48 83 86 17 | 83 86  6 31 17  9 48 53
+    List<String> cards;
 
-    public int aoc_23_4_part1(String resourcePath) {
-        List<String> input = DataProcessor.readTextFile(resourcePath);
+    public int aoc_23_4(String resourcePath, int part) {
+        cards = DataProcessor.readTextFile(resourcePath);
         int[] result = {0};
-        input.forEach(card -> result[0] += calculateCurrentCardPoints(card));
+        if (part == 1) {
+            cards.forEach(card -> result[0] += calculateCurrentCardPoints(card));
+            return result[0];
+        }
+        cards.forEach(card -> result[0] += countScratchCards(card));
         return result[0];
     }
 
@@ -27,6 +31,28 @@ public class AoC_23_Day4 {
                         }
                 );
         return (int) (Math.pow(2.0, (double)currCardPoints[0]-1));
+    }
+
+    public int countScratchCards(String cardInput){
+        Card card = createCardFromInputText(cardInput);
+        int scratchCardQuantity = 0;
+        int[] currCardPoints = {0};
+
+        card.winNums.forEach(n -> {
+                    if (card.yourNums.contains(n)) {
+                        currCardPoints[0]++;
+                    }
+                }
+        );
+
+        if (currCardPoints[0] != 0) {
+            for (int i = 0; i < currCardPoints[0]; i++) {
+
+                int nextCardIndex = card.id + i;
+                scratchCardQuantity += countScratchCards(cards.get(nextCardIndex));
+            }
+        }
+        return scratchCardQuantity + 1;
     }
 
 
@@ -58,6 +84,5 @@ public class AoC_23_Day4 {
             this.yourNums = yourNums;
             points = 0;
         }
-
     }
 }
